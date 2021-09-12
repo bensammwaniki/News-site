@@ -1,9 +1,12 @@
-from re import DEBUG
-from flask import Flask, app,render_template
-from flask_bootstrap import Bootstrap
 
-App = Flask(__name__)
-Bootstrap(App)
+from app import App
+from flask_script import Manager,Server
 
-if __name__=="__main__":
-    app.run(DEBUG=True)
+# Creating app instance
+app = App('development')
+
+manager = Manager(app)
+manager.add_command('server',Server)
+
+if __name__ == '__main__':
+    manager.run(debug = True)
