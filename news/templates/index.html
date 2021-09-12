@@ -1,13 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="jumbotron" style="height: 400px;">
-  <div class="row">
-    <div class="card" style="width: 10rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
+<div class="jumbotron" style="min-height: 400px;">
+  <div class="row" style="justify-content: space-evenly;">
+    {% for source in sources %}
+    <div class="card text-center" style="width: 21rem; min-height:18rem; margin-bottom: 4px;position: relative;">
+      <h5 class="card-title">{{ source.category }}</h5>
       <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text">{{ source.description }}</p>
+          <ul class="list-group list-group-flush" style="position: absolute;bottom: 0;width: 70%;align-items: center;">
+            <li class="list-group-item"><a href="{{ source.url }}" class="btn btn-warning" target="_blank" rel="noopener noreferrer">View on {{ source.name }}</a></li>
+          </ul>  
+          
       </div>
     </div>
+    {% endfor %}
   </div>
 </div>
 
@@ -16,8 +22,6 @@
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
