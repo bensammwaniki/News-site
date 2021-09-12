@@ -5,9 +5,9 @@ class Config:
     General configurations
     '''
     
-    SOURCES_URL = 'https://newsapi.org/v2/top-headlines/sources?apiKey'
-    ARTICLES_URL = 'https://newsapi.org/v2/everything?q=Apple&from=2021-09-12&sortBy=popularity&apiKey'
-    HEADLINES_URL = 'https://newsapi.org/v2/top-headlines?country=us&apiKey'
+    SOURCES_URL = 'https://newsapi.org/v2/top-headlines/sources?apiKey={}'
+    ARTICLES_URL = 'https://newsapi.org/v2/everything?q=Apple&from=2021-09-12&sortBy=popularity&apiKey={}'
+    HEADLINES_URL = 'https://newsapi.org/v2/top-headlines?country=us&apiKey={}'
     NEWS_API_KEY = os.environ.get('API_KEY')  
 
 class ProdConfig(Config):
