@@ -1,3 +1,3 @@
 from flask import Blueprint
 from .import view,errors
-main = Blueprint('main', __name__)
+main = Blueprint('mainb', __name__)

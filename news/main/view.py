@@ -6,7 +6,7 @@ from ..request import get_sources,get_articles
 
 @main.route('/')
 def index():
-    title = 'Welcome to NewsWeb App'
+    title = 'This is the best News Center'
     news_sources = get_sources('general')
     print(news_sources)
    

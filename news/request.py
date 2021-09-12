@@ -57,7 +57,7 @@ def get_articles(articles):
     function to get json response
     '''
     
-    articles_url = ''.format(articles)
+    articles_url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=5885f46e6c344dc5bfdcce62211112b5'.format(articles)
     
     with urllib.request.urlopen(articles_url) as url:
         
