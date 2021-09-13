@@ -1,0 +1,21 @@
+{% macro displayList(news_list) %}
+
+    {% for news in news_list %}
+
+<div class="col-sm-4">
+    <div class="card"style="height: 600px; margin: 10px;">
+      <a href="{{ news.url }}" target="_blank" rel="noopener noreferrer"><img class="card-img-top" src="{{news.urlToImage}}" alt=""></a>
+      <div class="card-body">
+        <h5 class="card-title">{{ searched.title }}</h5>
+        <p class="card-text">{{ searched.description }}</p>
+        <a href="{{ news.url }}" class="btn btn-primary">read more</a>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+
+
+
+
+{% endmacro %}

@@ -14,8 +14,10 @@ def index():
 # @main.route('/articles/<id>')
 
 # def articles(id):    
-#     return render_template('articles.html',id = id, articles=articles)    
+#     return render_template('articles.html',id = id, articles=articles) 
 
+
+@main.route('/search/<news_name>')
 def search(news_name):
     '''
     View function to display the search results
@@ -24,4 +26,4 @@ def search(news_name):
     news_name_format = "+".join(news_name_list)
     searched_news = search_news(news_name_format)
     title = f'search {news_name}'
-    return render_template('disp_search.html',news = searched_news,title=title)
+    return render_template('disp_search.html',news=searched_news,title=title)

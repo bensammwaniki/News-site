@@ -1,19 +1,11 @@
 {% extends "base.html" %}
+{% import 'macros.html' as macro%}
 {% block content %}
+<h1>{{ title }}</h1>
+<h3> We have Found {{ news| count }} matching your search </h3>
 <div class="container-fluid">
     <div class="row">
-      {% for article in articles %}
-      <div class="col-sm-4">
-        <div class="card"style="height: 600px; margin: 10px;">
-          <a href="{{ article.url }}" target="_blank" rel="noopener noreferrer"><img class="card-img-top" src="{{ article.urlToImage }}" alt=""></a>
-          <div class="card-body">
-            <h5 class="card-title">{{ article.title }}</h5>
-            <p class="card-text">{{ article.description }}</p>
-            <a href="{{ article.url }}" class="btn btn-primary">read more</a>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
+        {{ macro.displayList(news)}}
     </div>
   </div>  
 {% endblock %}
