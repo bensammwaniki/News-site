@@ -1,7 +1,7 @@
 
 from flask import render_template
 from .import main
-from ..request import get_sources,get_articles
+from ..request import get_sources,get_articles,search_news
 
 
 @main.route('/')
@@ -15,3 +15,13 @@ def index():
 
 # def articles(id):    
 #     return render_template('articles.html',id = id, articles=articles)    
+
+def search(news_name):
+    '''
+    View function to display the search results
+    '''
+    news_name_list = news_name.split(" ")
+    news_name_format = "+".join(news_name_list)
+    searched_news = search_news(news_name_format)
+    title = f'search {news_name}'
+    return render_template('disp_search.html',news = searched_news,title=title)
