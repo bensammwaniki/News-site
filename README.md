@@ -4,7 +4,7 @@
 
 #### By **Bensam mwaniki**
 ## Description
-This is web application that allows you to view news, articles. You can also navigate to the relevant website of the news article.
+This is web application that allows you to view news, articles. You can also navigate to the relevant website of the news article.This application uses news api which gives a vast amount of data to te user
 ## BEHAVIOUR DRIVEN DEVELOPMENT
 | GENERAL BEHAVIOUR | INPUT | OUTPUT|
 |:------------------|:--------|:-----------|
