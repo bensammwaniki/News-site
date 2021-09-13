@@ -10,7 +10,6 @@ def index():
     news_sources = get_sources('general')
     articles = get_articles(id)
 
-
     return render_template('index.html',title = title,sources =news_sources,articles=articles)
 # @main.route('/articles/<id>')
 
