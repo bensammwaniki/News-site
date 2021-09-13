@@ -19,31 +19,20 @@
 
 <!-- ========================================================== -->
 
-<div class="container">
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="{{ article.id }}" class="active"></li>
-    </ol>
-    <div class="carousel-inner">
-      {% for article in articles %}
-      <div class="carousel-item active">
-       <a href="{{ article.url }}" target="_blank" rel="noopener noreferrer"><img class="d-block w-100" src="{{ article.urlToImage }}" alt=""></a>
-        <div class="carousel-caption d-none d-md-block">
-          <h3>{{ article.title }}</h3>
-          <p>{{ article.description }}</p>
+<div class="container-fluid">
+  <div class="row">
+    {% for article in articles %}
+    <div class="col-sm-4">
+      <div class="card"style="height: 600px; margin: 10px;">
+        <a href="{{ article.url }}" target="_blank" rel="noopener noreferrer"><img class="card-img-top" src="{{ article.urlToImage }}" alt=""></a>
+        <div class="card-body">
+          <h5 class="card-title">{{ article.title }}</h5>
+          <p class="card-text">{{ article.description }}</p>
+          <a href="{{ article.url }}" class="btn btn-primary">read more</a>
         </div>
       </div>
-      {% endfor %}
-
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
+    {% endfor %}
   </div>
-</div> 
-  {% endblock %}
+</div>
+{% endblock %}

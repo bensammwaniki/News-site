@@ -1,4 +1,3 @@
-from news.main.view import index
 import urllib.request,json
 from .models import Articles,Sources
 
