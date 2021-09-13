@@ -1,5 +1,4 @@
-
-from flask import render_template
+from flask import render_template,redirect,url_for,request
 from .import main
 from ..request import get_sources,get_articles,search_news
 
@@ -9,8 +8,11 @@ def index():
     title = 'This is the best News Center'
     news_sources = get_sources('general')
     articles = get_articles(id)
-
-    return render_template('index.html',title = title,sources =news_sources,articles=articles)
+    search_news = request.args.get('news_query')
+    if search_news:
+        return redirect(url_for('main.search',news_name=search_news))
+    else:
+        return render_template('index.html',title = title,sources=news_sources,articles=articles)
 # @main.route('/articles/<id>')
 
 # def articles(id):    

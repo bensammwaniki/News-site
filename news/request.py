@@ -103,8 +103,8 @@ def search_news(sources):
         search_news_response = json.loads(search_news_data)
 
         if search_news_response['articles']:
-            search_movie_list = search_news_response['articles']
-            search_results = process_everything(search_movie_list)
+            search_list = search_news_response['articles']
+            search_results = process_everything(search_list)
 
 
     return search_results
@@ -148,13 +148,6 @@ def get_everything():
     return news_sources_everything
 
 def process_everything(news_list):
-    '''
-    Function  that processes the news result and transform them to a list of Objects
-    Args:
-        news_list: A list of dictionaries that contain news details
-    Returns :
-        news_results: A list of news objects
-    '''
     news_sources_everything= []
     for news_item in news_list:
         author = news_item.get('author')
